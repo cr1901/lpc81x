@@ -27697,9 +27697,9 @@ pub mod syscon {
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum FREQRANGER {
             #[doc = "1 - 20 MHz frequency range."]
-            _1__20_MHZ_FREQUENCY,
+            _1_20_MHZ_FREQUENCY,
             #[doc = "15 - 25 MHz frequency range"]
-            _15__25_MHZ_FREQUENC,
+            _15_25_MHZ_FREQUENC,
         }
         impl FREQRANGER {
             #[doc = r" Returns `true` if the bit is clear (0)"]
@@ -27716,8 +27716,8 @@ pub mod syscon {
             #[inline(always)]
             pub fn bit(&self) -> bool {
                 match *self {
-                    FREQRANGER::_1__20_MHZ_FREQUENCY => false,
-                    FREQRANGER::_15__25_MHZ_FREQUENC => true,
+                    FREQRANGER::_1_20_MHZ_FREQUENCY => false,
+                    FREQRANGER::_15_25_MHZ_FREQUENC => true,
                 }
             }
             #[allow(missing_docs)]
@@ -27725,19 +27725,19 @@ pub mod syscon {
             #[inline(always)]
             pub fn _from(value: bool) -> FREQRANGER {
                 match value {
-                    false => FREQRANGER::_1__20_MHZ_FREQUENCY,
-                    true => FREQRANGER::_15__25_MHZ_FREQUENC,
+                    false => FREQRANGER::_1_20_MHZ_FREQUENCY,
+                    true => FREQRANGER::_15_25_MHZ_FREQUENC,
                 }
             }
-            #[doc = "Checks if the value of the field is `_1__20_MHZ_FREQUENCY`"]
+            #[doc = "Checks if the value of the field is `_1_20_MHZ_FREQUENCY`"]
             #[inline(always)]
-            pub fn is_1__20_mhz_frequency(&self) -> bool {
-                *self == FREQRANGER::_1__20_MHZ_FREQUENCY
+            pub fn is_1_20_mhz_frequency(&self) -> bool {
+                *self == FREQRANGER::_1_20_MHZ_FREQUENCY
             }
-            #[doc = "Checks if the value of the field is `_15__25_MHZ_FREQUENC`"]
+            #[doc = "Checks if the value of the field is `_15_25_MHZ_FREQUENC`"]
             #[inline(always)]
-            pub fn is_15__25_mhz_frequenc(&self) -> bool {
-                *self == FREQRANGER::_15__25_MHZ_FREQUENC
+            pub fn is_15_25_mhz_frequenc(&self) -> bool {
+                *self == FREQRANGER::_15_25_MHZ_FREQUENC
             }
         }
         #[doc = "Values that can be written to the field `BYPASS`"]
@@ -27801,9 +27801,9 @@ pub mod syscon {
         #[doc = "Values that can be written to the field `FREQRANGE`"]
         pub enum FREQRANGEW {
             #[doc = "1 - 20 MHz frequency range."]
-            _1__20_MHZ_FREQUENCY,
+            _1_20_MHZ_FREQUENCY,
             #[doc = "15 - 25 MHz frequency range"]
-            _15__25_MHZ_FREQUENC,
+            _15_25_MHZ_FREQUENC,
         }
         impl FREQRANGEW {
             #[allow(missing_docs)]
@@ -27811,8 +27811,8 @@ pub mod syscon {
             #[inline(always)]
             pub fn _bits(&self) -> bool {
                 match *self {
-                    FREQRANGEW::_1__20_MHZ_FREQUENCY => false,
-                    FREQRANGEW::_15__25_MHZ_FREQUENC => true,
+                    FREQRANGEW::_1_20_MHZ_FREQUENCY => false,
+                    FREQRANGEW::_15_25_MHZ_FREQUENC => true,
                 }
             }
         }
@@ -27830,13 +27830,13 @@ pub mod syscon {
             }
             #[doc = "1 - 20 MHz frequency range."]
             #[inline(always)]
-            pub fn _1__20_mhz_frequency(self) -> &'a mut W {
-                self.variant(FREQRANGEW::_1__20_MHZ_FREQUENCY)
+            pub fn _1_20_mhz_frequency(self) -> &'a mut W {
+                self.variant(FREQRANGEW::_1_20_MHZ_FREQUENCY)
             }
             #[doc = "15 - 25 MHz frequency range"]
             #[inline(always)]
-            pub fn _15__25_mhz_frequenc(self) -> &'a mut W {
-                self.variant(FREQRANGEW::_15__25_MHZ_FREQUENC)
+            pub fn _15_25_mhz_frequenc(self) -> &'a mut W {
+                self.variant(FREQRANGEW::_15_25_MHZ_FREQUENC)
             }
             #[doc = r" Sets the field bit"]
             pub fn set_bit(self) -> &'a mut W {

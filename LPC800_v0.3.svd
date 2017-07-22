@@ -5446,12 +5446,12 @@
 				<enumeratedValues>		
 				<name>ENUM</name>		
 					<enumeratedValue>	
-						<name>1__20_MHZ_FREQUENCY</name>
+						<name>1_20_MHZ_FREQUENCY</name>
 						<description>1 - 20 MHz frequency range.</description>
 						<value>0</value>
 					</enumeratedValue>	
 					<enumeratedValue>	
-						<name>15__25_MHZ_FREQUENC</name>
+						<name>15_25_MHZ_FREQUENC</name>
 						<description>15 - 25 MHz frequency range</description>
 						<value>1</value>
 					</enumeratedValue>	
