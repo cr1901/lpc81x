@@ -32222,7 +32222,7 @@ pub mod syscon {
             #[doc = r" Reset value of the register"]
             #[inline(always)]
             pub fn reset_value() -> W {
-                W { bits: 31 }
+                W { bits: 223 }
             }
             #[doc = r" Writes raw bits to the register"]
             #[inline(always)]

@@ -5857,7 +5857,7 @@
 		<description>System clock control</description>				
 		<addressOffset>0x080</addressOffset>				
 		<access>read-write</access>				
-		<resetValue>0x1F</resetValue>				
+		<resetValue>0xDF</resetValue>				
 		<resetMask>0xFFFFFFFF</resetMask>				
 		<fields>				
 			<field>			
