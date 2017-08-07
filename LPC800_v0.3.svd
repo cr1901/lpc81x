@@ -375,7 +375,7 @@
 						<value>0x2</value>
 					</enumeratedValue>	
 					<enumeratedValue>	
-						<name>RESERVED_</name>
+						<name>RESERVED</name>
 						<description>Reserved.</description>
 						<value>0x3</value>
 					</enumeratedValue>	
@@ -1698,12 +1698,12 @@
 									<value>0x1</value>						
 								</enumeratedValue>							
 								<enumeratedValue>							
-									<name>RESERVED_0</name>						
+									<name>RESERVED</name>						
 									<description>Reserved.</description>						
 									<value>0x2</value>						
 								</enumeratedValue>							
 								<enumeratedValue>							
-									<name>RESERVED_1</name>						
+									<name>RESERVED</name>						
 									<description>Reserved.</description>						
 									<value>0x3</value>						
 								</enumeratedValue>							
@@ -3124,7 +3124,7 @@
 							<value>0x2</value>
 						</enumeratedValue>
 						<enumeratedValue>
-							<name>RESERVED_</name>
+							<name>RESERVED</name>
 							<description>Reserved.</description>
 							<value>0x3</value>
 						</enumeratedValue>
@@ -3275,7 +3275,7 @@
 							<value>0x2</value>
 						</enumeratedValue>
 						<enumeratedValue>
-							<name>RESERVED_</name>
+							<name>RESERVED</name>
 							<description>Reserved.</description>
 							<value>0x3</value>
 						</enumeratedValue>
@@ -5701,7 +5701,7 @@
 						<value>0x1</value>
 					</enumeratedValue>	
 					<enumeratedValue>	
-						<name>RESERVED_</name>
+						<name>RESERVED</name>
 						<description>Reserved.</description>
 						<value>0x2</value>
 					</enumeratedValue>	
@@ -7687,7 +7687,7 @@
 							<value>0x2</value>
 						</enumeratedValue>
 						<enumeratedValue>
-							<name>RESERVED_</name>
+							<name>RESERVED</name>
 							<description>Reserved.</description>
 							<value>0x3</value>
 						</enumeratedValue>
@@ -9653,7 +9653,7 @@
 						<value>0x2</value>
 					</enumeratedValue>	
 					<enumeratedValue>	
-						<name>RESERVED_</name>
+						<name>RESERVED</name>
 						<description>Reserved.</description>
 						<value>0x3</value>
 					</enumeratedValue>	
@@ -9671,7 +9671,7 @@
 						<value>0x0</value>
 					</enumeratedValue>	
 					<enumeratedValue>	
-						<name>RESERVED_</name>
+						<name>RESERVED</name>
 						<description>Reserved.</description>
 						<value>0x1</value>
 					</enumeratedValue>	
@@ -10596,7 +10596,7 @@
 							<value>0x2</value>
 						</enumeratedValue>
 						<enumeratedValue>
-							<name>RESERVED_</name>
+							<name>RESERVED</name>
 							<description>Reserved.</description>
 							<value>0x3</value>
 						</enumeratedValue>

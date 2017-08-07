@@ -1,6 +1,6 @@
 [package]
 name = "lpc81x"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["William D. Jones <thor0505@comcast.net>"]
 
 [dependencies]

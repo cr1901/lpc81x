@@ -1885,8 +1885,6 @@ pub mod mrt {
             ONE_SHOT_INTERRUPT_M,
             #[doc = "One-shot bus stall mode."]
             ONE_SHOT_BUS_STALL_M,
-            #[doc = "Reserved."]
-            RESERVED_,
         }
         impl MODER {
             #[doc = r" Value of the field as raw bits"]
@@ -1896,7 +1894,6 @@ pub mod mrt {
                     MODER::REPEAT_INTERRUPT_MOD => 0,
                     MODER::ONE_SHOT_INTERRUPT_M => 1,
                     MODER::ONE_SHOT_BUS_STALL_M => 2,
-                    MODER::RESERVED_ => 3,
                 }
             }
             #[allow(missing_docs)]
@@ -1907,7 +1904,6 @@ pub mod mrt {
                     0 => MODER::REPEAT_INTERRUPT_MOD,
                     1 => MODER::ONE_SHOT_INTERRUPT_M,
                     2 => MODER::ONE_SHOT_BUS_STALL_M,
-                    3 => MODER::RESERVED_,
                     _ => unreachable!(),
                 }
             }
@@ -1925,11 +1921,6 @@ pub mod mrt {
             #[inline(always)]
             pub fn is_one_shot_bus_stall_m(&self) -> bool {
                 *self == MODER::ONE_SHOT_BUS_STALL_M
-            }
-            #[doc = "Checks if the value of the field is `RESERVED_`"]
-            #[inline(always)]
-            pub fn is_reserved_(&self) -> bool {
-                *self == MODER::RESERVED_
             }
         }
         #[doc = "Values that can be written to the field `INTEN`"]
@@ -1998,8 +1989,6 @@ pub mod mrt {
             ONE_SHOT_INTERRUPT_M,
             #[doc = "One-shot bus stall mode."]
             ONE_SHOT_BUS_STALL_M,
-            #[doc = "Reserved."]
-            RESERVED_,
         }
         impl MODEW {
             #[allow(missing_docs)]
@@ -2010,7 +1999,6 @@ pub mod mrt {
                     MODEW::REPEAT_INTERRUPT_MOD => 0,
                     MODEW::ONE_SHOT_INTERRUPT_M => 1,
                     MODEW::ONE_SHOT_BUS_STALL_M => 2,
-                    MODEW::RESERVED_ => 3,
                 }
             }
         }
@@ -2022,9 +2010,7 @@ pub mod mrt {
             #[doc = r" Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: MODEW) -> &'a mut W {
-                {
-                    self.bits(variant._bits())
-                }
+                unsafe { self.bits(variant._bits()) }
             }
             #[doc = "Repeat interrupt mode."]
             #[inline(always)]
@@ -2041,14 +2027,9 @@ pub mod mrt {
             pub fn one_shot_bus_stall_m(self) -> &'a mut W {
                 self.variant(MODEW::ONE_SHOT_BUS_STALL_M)
             }
-            #[doc = "Reserved."]
-            #[inline(always)]
-            pub fn reserved_(self) -> &'a mut W {
-                self.variant(MODEW::RESERVED_)
-            }
             #[doc = r" Writes raw bits to the field"]
             #[inline(always)]
-            pub fn bits(self, value: u8) -> &'a mut W {
+            pub unsafe fn bits(self, value: u8) -> &'a mut W {
                 const MASK: u8 = 3;
                 const OFFSET: u8 = 1;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -9335,10 +9316,6 @@ pub mod flashctrl {
             _1_SYSTEM_CLOCK_FLASH,
             #[doc = "2 system clocks flash access time (for system clock frequencies of up to 30 MHz)."]
             _2_SYSTEM_CLOCKS_FLAS,
-            #[doc = "Reserved."]
-            RESERVED_0,
-            #[doc = "Reserved."]
-            RESERVED_1,
         }
         impl FLASHTIMR {
             #[doc = r" Value of the field as raw bits"]
@@ -9347,8 +9324,6 @@ pub mod flashctrl {
                 match *self {
                     FLASHTIMR::_1_SYSTEM_CLOCK_FLASH => 0,
                     FLASHTIMR::_2_SYSTEM_CLOCKS_FLAS => 1,
-                    FLASHTIMR::RESERVED_0 => 2,
-                    FLASHTIMR::RESERVED_1 => 3,
                 }
             }
             #[allow(missing_docs)]
@@ -9358,8 +9333,6 @@ pub mod flashctrl {
                 match value {
                     0 => FLASHTIMR::_1_SYSTEM_CLOCK_FLASH,
                     1 => FLASHTIMR::_2_SYSTEM_CLOCKS_FLAS,
-                    2 => FLASHTIMR::RESERVED_0,
-                    3 => FLASHTIMR::RESERVED_1,
                     _ => unreachable!(),
                 }
             }
@@ -9373,16 +9346,6 @@ pub mod flashctrl {
             pub fn is_2_system_clocks_flas(&self) -> bool {
                 *self == FLASHTIMR::_2_SYSTEM_CLOCKS_FLAS
             }
-            #[doc = "Checks if the value of the field is `RESERVED_0`"]
-            #[inline(always)]
-            pub fn is_reserved_0(&self) -> bool {
-                *self == FLASHTIMR::RESERVED_0
-            }
-            #[doc = "Checks if the value of the field is `RESERVED_1`"]
-            #[inline(always)]
-            pub fn is_reserved_1(&self) -> bool {
-                *self == FLASHTIMR::RESERVED_1
-            }
         }
         #[doc = "Values that can be written to the field `FLASHTIM`"]
         pub enum FLASHTIMW {
@@ -9390,10 +9353,6 @@ pub mod flashctrl {
             _1_SYSTEM_CLOCK_FLASH,
             #[doc = "2 system clocks flash access time (for system clock frequencies of up to 30 MHz)."]
             _2_SYSTEM_CLOCKS_FLAS,
-            #[doc = "Reserved."]
-            RESERVED_0,
-            #[doc = "Reserved."]
-            RESERVED_1,
         }
         impl FLASHTIMW {
             #[allow(missing_docs)]
@@ -9403,8 +9362,6 @@ pub mod flashctrl {
                 match *self {
                     FLASHTIMW::_1_SYSTEM_CLOCK_FLASH => 0,
                     FLASHTIMW::_2_SYSTEM_CLOCKS_FLAS => 1,
-                    FLASHTIMW::RESERVED_0 => 2,
-                    FLASHTIMW::RESERVED_1 => 3,
                 }
             }
         }
@@ -9416,9 +9373,7 @@ pub mod flashctrl {
             #[doc = r" Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: FLASHTIMW) -> &'a mut W {
-                {
-                    self.bits(variant._bits())
-                }
+                unsafe { self.bits(variant._bits()) }
             }
             #[doc = "1 system clock flash access time (for system clock frequencies of up to 20 MHz)."]
             #[inline(always)]
@@ -9430,19 +9385,9 @@ pub mod flashctrl {
             pub fn _2_system_clocks_flas(self) -> &'a mut W {
                 self.variant(FLASHTIMW::_2_SYSTEM_CLOCKS_FLAS)
             }
-            #[doc = "Reserved."]
-            #[inline(always)]
-            pub fn reserved_0(self) -> &'a mut W {
-                self.variant(FLASHTIMW::RESERVED_0)
-            }
-            #[doc = "Reserved."]
-            #[inline(always)]
-            pub fn reserved_1(self) -> &'a mut W {
-                self.variant(FLASHTIMW::RESERVED_1)
-            }
             #[doc = r" Writes raw bits to the field"]
             #[inline(always)]
-            pub fn bits(self, value: u8) -> &'a mut W {
+            pub unsafe fn bits(self, value: u8) -> &'a mut W {
                 const MASK: u8 = 3;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -16173,8 +16118,6 @@ pub mod iocon {
             STANDARD_IO,
             #[doc = "Fast-mode Plus I2C"]
             FAST_MODE_PLUS_I2C,
-            #[doc = "Reserved."]
-            RESERVED_,
         }
         impl I2CMODER {
             #[doc = r" Value of the field as raw bits"]
@@ -16184,7 +16127,6 @@ pub mod iocon {
                     I2CMODER::STANDARD_MODE => 0,
                     I2CMODER::STANDARD_IO => 1,
                     I2CMODER::FAST_MODE_PLUS_I2C => 2,
-                    I2CMODER::RESERVED_ => 3,
                 }
             }
             #[allow(missing_docs)]
@@ -16195,7 +16137,6 @@ pub mod iocon {
                     0 => I2CMODER::STANDARD_MODE,
                     1 => I2CMODER::STANDARD_IO,
                     2 => I2CMODER::FAST_MODE_PLUS_I2C,
-                    3 => I2CMODER::RESERVED_,
                     _ => unreachable!(),
                 }
             }
@@ -16213,11 +16154,6 @@ pub mod iocon {
             #[inline(always)]
             pub fn is_fast_mode_plus_i2c(&self) -> bool {
                 *self == I2CMODER::FAST_MODE_PLUS_I2C
-            }
-            #[doc = "Checks if the value of the field is `RESERVED_`"]
-            #[inline(always)]
-            pub fn is_reserved_(&self) -> bool {
-                *self == I2CMODER::RESERVED_
             }
         }
         #[doc = "Possible values of the field `S_MODE`"]
@@ -16428,8 +16364,6 @@ pub mod iocon {
             STANDARD_IO,
             #[doc = "Fast-mode Plus I2C"]
             FAST_MODE_PLUS_I2C,
-            #[doc = "Reserved."]
-            RESERVED_,
         }
         impl I2CMODEW {
             #[allow(missing_docs)]
@@ -16440,7 +16374,6 @@ pub mod iocon {
                     I2CMODEW::STANDARD_MODE => 0,
                     I2CMODEW::STANDARD_IO => 1,
                     I2CMODEW::FAST_MODE_PLUS_I2C => 2,
-                    I2CMODEW::RESERVED_ => 3,
                 }
             }
         }
@@ -16452,9 +16385,7 @@ pub mod iocon {
             #[doc = r" Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: I2CMODEW) -> &'a mut W {
-                {
-                    self.bits(variant._bits())
-                }
+                unsafe { self.bits(variant._bits()) }
             }
             #[doc = "Standard mode/ Fast-mode I2C."]
             #[inline(always)]
@@ -16471,14 +16402,9 @@ pub mod iocon {
             pub fn fast_mode_plus_i2c(self) -> &'a mut W {
                 self.variant(I2CMODEW::FAST_MODE_PLUS_I2C)
             }
-            #[doc = "Reserved."]
-            #[inline(always)]
-            pub fn reserved_(self) -> &'a mut W {
-                self.variant(I2CMODEW::RESERVED_)
-            }
             #[doc = r" Writes raw bits to the field"]
             #[inline(always)]
-            pub fn bits(self, value: u8) -> &'a mut W {
+            pub unsafe fn bits(self, value: u8) -> &'a mut W {
                 const MASK: u8 = 3;
                 const OFFSET: u8 = 8;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -16821,8 +16747,6 @@ pub mod iocon {
             STANDARD_IO,
             #[doc = "Fast-mode Plus I2C"]
             FAST_MODE_PLUS_I2C,
-            #[doc = "Reserved."]
-            RESERVED_,
         }
         impl I2CMODER {
             #[doc = r" Value of the field as raw bits"]
@@ -16832,7 +16756,6 @@ pub mod iocon {
                     I2CMODER::STANDARD_MODE => 0,
                     I2CMODER::STANDARD_IO => 1,
                     I2CMODER::FAST_MODE_PLUS_I2C => 2,
-                    I2CMODER::RESERVED_ => 3,
                 }
             }
             #[allow(missing_docs)]
@@ -16843,7 +16766,6 @@ pub mod iocon {
                     0 => I2CMODER::STANDARD_MODE,
                     1 => I2CMODER::STANDARD_IO,
                     2 => I2CMODER::FAST_MODE_PLUS_I2C,
-                    3 => I2CMODER::RESERVED_,
                     _ => unreachable!(),
                 }
             }
@@ -16861,11 +16783,6 @@ pub mod iocon {
             #[inline(always)]
             pub fn is_fast_mode_plus_i2c(&self) -> bool {
                 *self == I2CMODER::FAST_MODE_PLUS_I2C
-            }
-            #[doc = "Checks if the value of the field is `RESERVED_`"]
-            #[inline(always)]
-            pub fn is_reserved_(&self) -> bool {
-                *self == I2CMODER::RESERVED_
             }
         }
         #[doc = "Possible values of the field `S_MODE`"]
@@ -17076,8 +16993,6 @@ pub mod iocon {
             STANDARD_IO,
             #[doc = "Fast-mode Plus I2C"]
             FAST_MODE_PLUS_I2C,
-            #[doc = "Reserved."]
-            RESERVED_,
         }
         impl I2CMODEW {
             #[allow(missing_docs)]
@@ -17088,7 +17003,6 @@ pub mod iocon {
                     I2CMODEW::STANDARD_MODE => 0,
                     I2CMODEW::STANDARD_IO => 1,
                     I2CMODEW::FAST_MODE_PLUS_I2C => 2,
-                    I2CMODEW::RESERVED_ => 3,
                 }
             }
         }
@@ -17100,9 +17014,7 @@ pub mod iocon {
             #[doc = r" Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: I2CMODEW) -> &'a mut W {
-                {
-                    self.bits(variant._bits())
-                }
+                unsafe { self.bits(variant._bits()) }
             }
             #[doc = "Standard mode/ Fast-mode I2C."]
             #[inline(always)]
@@ -17119,14 +17031,9 @@ pub mod iocon {
             pub fn fast_mode_plus_i2c(self) -> &'a mut W {
                 self.variant(I2CMODEW::FAST_MODE_PLUS_I2C)
             }
-            #[doc = "Reserved."]
-            #[inline(always)]
-            pub fn reserved_(self) -> &'a mut W {
-                self.variant(I2CMODEW::RESERVED_)
-            }
             #[doc = r" Writes raw bits to the field"]
             #[inline(always)]
-            pub fn bits(self, value: u8) -> &'a mut W {
+            pub unsafe fn bits(self, value: u8) -> &'a mut W {
                 const MASK: u8 = 3;
                 const OFFSET: u8 = 8;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -29058,8 +28965,6 @@ pub mod syscon {
             IRC,
             #[doc = "Crystal Oscillator (SYSOSC)"]
             CRYSTAL_OSCILLATOR_,
-            #[doc = "Reserved."]
-            RESERVED_,
             #[doc = "CLKIN. External clock input."]
             CLKIN_EXTERNAL_CLOC,
         }
@@ -29070,7 +28975,6 @@ pub mod syscon {
                 match *self {
                     SELR::IRC => 0,
                     SELR::CRYSTAL_OSCILLATOR_ => 1,
-                    SELR::RESERVED_ => 2,
                     SELR::CLKIN_EXTERNAL_CLOC => 3,
                 }
             }
@@ -29081,7 +28985,6 @@ pub mod syscon {
                 match value {
                     0 => SELR::IRC,
                     1 => SELR::CRYSTAL_OSCILLATOR_,
-                    2 => SELR::RESERVED_,
                     3 => SELR::CLKIN_EXTERNAL_CLOC,
                     _ => unreachable!(),
                 }
@@ -29096,11 +28999,6 @@ pub mod syscon {
             pub fn is_crystal_oscillator_(&self) -> bool {
                 *self == SELR::CRYSTAL_OSCILLATOR_
             }
-            #[doc = "Checks if the value of the field is `RESERVED_`"]
-            #[inline(always)]
-            pub fn is_reserved_(&self) -> bool {
-                *self == SELR::RESERVED_
-            }
             #[doc = "Checks if the value of the field is `CLKIN_EXTERNAL_CLOC`"]
             #[inline(always)]
             pub fn is_clkin_external_cloc(&self) -> bool {
@@ -29113,8 +29011,6 @@ pub mod syscon {
             IRC,
             #[doc = "Crystal Oscillator (SYSOSC)"]
             CRYSTAL_OSCILLATOR_,
-            #[doc = "Reserved."]
-            RESERVED_,
             #[doc = "CLKIN. External clock input."]
             CLKIN_EXTERNAL_CLOC,
         }
@@ -29126,7 +29022,6 @@ pub mod syscon {
                 match *self {
                     SELW::IRC => 0,
                     SELW::CRYSTAL_OSCILLATOR_ => 1,
-                    SELW::RESERVED_ => 2,
                     SELW::CLKIN_EXTERNAL_CLOC => 3,
                 }
             }
@@ -29139,9 +29034,7 @@ pub mod syscon {
             #[doc = r" Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: SELW) -> &'a mut W {
-                {
-                    self.bits(variant._bits())
-                }
+                unsafe { self.bits(variant._bits()) }
             }
             #[doc = "IRC"]
             #[inline(always)]
@@ -29153,11 +29046,6 @@ pub mod syscon {
             pub fn crystal_oscillator_(self) -> &'a mut W {
                 self.variant(SELW::CRYSTAL_OSCILLATOR_)
             }
-            #[doc = "Reserved."]
-            #[inline(always)]
-            pub fn reserved_(self) -> &'a mut W {
-                self.variant(SELW::RESERVED_)
-            }
             #[doc = "CLKIN. External clock input."]
             #[inline(always)]
             pub fn clkin_external_cloc(self) -> &'a mut W {
@@ -29165,7 +29053,7 @@ pub mod syscon {
             }
             #[doc = r" Writes raw bits to the field"]
             #[inline(always)]
-            pub fn bits(self, value: u8) -> &'a mut W {
+            pub unsafe fn bits(self, value: u8) -> &'a mut W {
                 const MASK: u8 = 3;
                 const OFFSET: u8 = 0;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -40005,8 +39893,6 @@ pub mod i2c {
             DATA_AVAILABLE_RECE,
             #[doc = "Data ready for transmit. Data can be transmitted (Slave Transmitter mode)."]
             DATA_READY_FOR_TRANS,
-            #[doc = "Reserved."]
-            RESERVED_,
         }
         impl SLVSTATER {
             #[doc = r" Value of the field as raw bits"]
@@ -40016,7 +39902,6 @@ pub mod i2c {
                     SLVSTATER::RECEIVED_ADDRESS_PL => 0,
                     SLVSTATER::DATA_AVAILABLE_RECE => 1,
                     SLVSTATER::DATA_READY_FOR_TRANS => 2,
-                    SLVSTATER::RESERVED_ => 3,
                 }
             }
             #[allow(missing_docs)]
@@ -40027,7 +39912,6 @@ pub mod i2c {
                     0 => SLVSTATER::RECEIVED_ADDRESS_PL,
                     1 => SLVSTATER::DATA_AVAILABLE_RECE,
                     2 => SLVSTATER::DATA_READY_FOR_TRANS,
-                    3 => SLVSTATER::RESERVED_,
                     _ => unreachable!(),
                 }
             }
@@ -40045,11 +39929,6 @@ pub mod i2c {
             #[inline(always)]
             pub fn is_data_ready_for_trans(&self) -> bool {
                 *self == SLVSTATER::DATA_READY_FOR_TRANS
-            }
-            #[doc = "Checks if the value of the field is `RESERVED_`"]
-            #[inline(always)]
-            pub fn is_reserved_(&self) -> bool {
-                *self == SLVSTATER::RESERVED_
             }
         }
         #[doc = "Possible values of the field `SLVNOTSTR`"]
@@ -40843,8 +40722,6 @@ pub mod i2c {
             DATA_AVAILABLE_RECE,
             #[doc = "Data ready for transmit. Data can be transmitted (Slave Transmitter mode)."]
             DATA_READY_FOR_TRANS,
-            #[doc = "Reserved."]
-            RESERVED_,
         }
         impl SLVSTATEW {
             #[allow(missing_docs)]
@@ -40855,7 +40732,6 @@ pub mod i2c {
                     SLVSTATEW::RECEIVED_ADDRESS_PL => 0,
                     SLVSTATEW::DATA_AVAILABLE_RECE => 1,
                     SLVSTATEW::DATA_READY_FOR_TRANS => 2,
-                    SLVSTATEW::RESERVED_ => 3,
                 }
             }
         }
@@ -40867,9 +40743,7 @@ pub mod i2c {
             #[doc = r" Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: SLVSTATEW) -> &'a mut W {
-                {
-                    self.bits(variant._bits())
-                }
+                unsafe { self.bits(variant._bits()) }
             }
             #[doc = "Received. Address plus R/W received. At least one of the four slave addresses has been matched by hardware."]
             #[inline(always)]
@@ -40886,14 +40760,9 @@ pub mod i2c {
             pub fn data_ready_for_trans(self) -> &'a mut W {
                 self.variant(SLVSTATEW::DATA_READY_FOR_TRANS)
             }
-            #[doc = "Reserved."]
-            #[inline(always)]
-            pub fn reserved_(self) -> &'a mut W {
-                self.variant(SLVSTATEW::RESERVED_)
-            }
             #[doc = r" Writes raw bits to the field"]
             #[inline(always)]
-            pub fn bits(self, value: u8) -> &'a mut W {
+            pub unsafe fn bits(self, value: u8) -> &'a mut W {
                 const MASK: u8 = 3;
                 const OFFSET: u8 = 9;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -50617,8 +50486,6 @@ pub mod usart0 {
             _8_BIT_DATA_LENGTH_,
             #[doc = "9 bit data length. The 9th bit is commonly used for addressing in multidrop mode. See the ADDRDET bit in the CTRL register."]
             _9_BIT_DATA_LENGTH_T,
-            #[doc = "Reserved."]
-            RESERVED_,
         }
         impl DATALENR {
             #[doc = r" Value of the field as raw bits"]
@@ -50628,7 +50495,6 @@ pub mod usart0 {
                     DATALENR::_7_BIT_DATA_LENGTH_ => 0,
                     DATALENR::_8_BIT_DATA_LENGTH_ => 1,
                     DATALENR::_9_BIT_DATA_LENGTH_T => 2,
-                    DATALENR::RESERVED_ => 3,
                 }
             }
             #[allow(missing_docs)]
@@ -50639,7 +50505,6 @@ pub mod usart0 {
                     0 => DATALENR::_7_BIT_DATA_LENGTH_,
                     1 => DATALENR::_8_BIT_DATA_LENGTH_,
                     2 => DATALENR::_9_BIT_DATA_LENGTH_T,
-                    3 => DATALENR::RESERVED_,
                     _ => unreachable!(),
                 }
             }
@@ -50658,19 +50523,12 @@ pub mod usart0 {
             pub fn is_9_bit_data_length_t(&self) -> bool {
                 *self == DATALENR::_9_BIT_DATA_LENGTH_T
             }
-            #[doc = "Checks if the value of the field is `RESERVED_`"]
-            #[inline(always)]
-            pub fn is_reserved_(&self) -> bool {
-                *self == DATALENR::RESERVED_
-            }
         }
         #[doc = "Possible values of the field `PARITYSEL`"]
         #[derive(Clone, Copy, Debug, PartialEq)]
         pub enum PARITYSELR {
             #[doc = "No parity."]
             NO_PARITY_,
-            #[doc = "Reserved."]
-            RESERVED_,
             #[doc = "Even parity. Adds a bit to each character such that the number of 1s in a transmitted character is even, and the number of 1s in a received character is expected to be even."]
             EVEN_PARITY_ADDS_A_,
             #[doc = "Odd parity. Adds a bit to each character such that the number of 1s in a transmitted character is odd, and the number of 1s in a received character is expected to be odd."]
@@ -50682,7 +50540,6 @@ pub mod usart0 {
             pub fn bits(&self) -> u8 {
                 match *self {
                     PARITYSELR::NO_PARITY_ => 0,
-                    PARITYSELR::RESERVED_ => 1,
                     PARITYSELR::EVEN_PARITY_ADDS_A_ => 2,
                     PARITYSELR::ODD_PARITY_ADDS_A_B => 3,
                 }
@@ -50693,7 +50550,6 @@ pub mod usart0 {
             pub fn _from(value: u8) -> PARITYSELR {
                 match value {
                     0 => PARITYSELR::NO_PARITY_,
-                    1 => PARITYSELR::RESERVED_,
                     2 => PARITYSELR::EVEN_PARITY_ADDS_A_,
                     3 => PARITYSELR::ODD_PARITY_ADDS_A_B,
                     _ => unreachable!(),
@@ -50703,11 +50559,6 @@ pub mod usart0 {
             #[inline(always)]
             pub fn is_no_parity_(&self) -> bool {
                 *self == PARITYSELR::NO_PARITY_
-            }
-            #[doc = "Checks if the value of the field is `RESERVED_`"]
-            #[inline(always)]
-            pub fn is_reserved_(&self) -> bool {
-                *self == PARITYSELR::RESERVED_
             }
             #[doc = "Checks if the value of the field is `EVEN_PARITY_ADDS_A_`"]
             #[inline(always)]
@@ -51068,8 +50919,6 @@ pub mod usart0 {
             _8_BIT_DATA_LENGTH_,
             #[doc = "9 bit data length. The 9th bit is commonly used for addressing in multidrop mode. See the ADDRDET bit in the CTRL register."]
             _9_BIT_DATA_LENGTH_T,
-            #[doc = "Reserved."]
-            RESERVED_,
         }
         impl DATALENW {
             #[allow(missing_docs)]
@@ -51080,7 +50929,6 @@ pub mod usart0 {
                     DATALENW::_7_BIT_DATA_LENGTH_ => 0,
                     DATALENW::_8_BIT_DATA_LENGTH_ => 1,
                     DATALENW::_9_BIT_DATA_LENGTH_T => 2,
-                    DATALENW::RESERVED_ => 3,
                 }
             }
         }
@@ -51092,9 +50940,7 @@ pub mod usart0 {
             #[doc = r" Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: DATALENW) -> &'a mut W {
-                {
-                    self.bits(variant._bits())
-                }
+                unsafe { self.bits(variant._bits()) }
             }
             #[doc = "7 bit Data length."]
             #[inline(always)]
@@ -51111,14 +50957,9 @@ pub mod usart0 {
             pub fn _9_bit_data_length_t(self) -> &'a mut W {
                 self.variant(DATALENW::_9_BIT_DATA_LENGTH_T)
             }
-            #[doc = "Reserved."]
-            #[inline(always)]
-            pub fn reserved_(self) -> &'a mut W {
-                self.variant(DATALENW::RESERVED_)
-            }
             #[doc = r" Writes raw bits to the field"]
             #[inline(always)]
-            pub fn bits(self, value: u8) -> &'a mut W {
+            pub unsafe fn bits(self, value: u8) -> &'a mut W {
                 const MASK: u8 = 3;
                 const OFFSET: u8 = 2;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -51130,8 +50971,6 @@ pub mod usart0 {
         pub enum PARITYSELW {
             #[doc = "No parity."]
             NO_PARITY_,
-            #[doc = "Reserved."]
-            RESERVED_,
             #[doc = "Even parity. Adds a bit to each character such that the number of 1s in a transmitted character is even, and the number of 1s in a received character is expected to be even."]
             EVEN_PARITY_ADDS_A_,
             #[doc = "Odd parity. Adds a bit to each character such that the number of 1s in a transmitted character is odd, and the number of 1s in a received character is expected to be odd."]
@@ -51144,7 +50983,6 @@ pub mod usart0 {
             pub fn _bits(&self) -> u8 {
                 match *self {
                     PARITYSELW::NO_PARITY_ => 0,
-                    PARITYSELW::RESERVED_ => 1,
                     PARITYSELW::EVEN_PARITY_ADDS_A_ => 2,
                     PARITYSELW::ODD_PARITY_ADDS_A_B => 3,
                 }
@@ -51158,19 +50996,12 @@ pub mod usart0 {
             #[doc = r" Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: PARITYSELW) -> &'a mut W {
-                {
-                    self.bits(variant._bits())
-                }
+                unsafe { self.bits(variant._bits()) }
             }
             #[doc = "No parity."]
             #[inline(always)]
             pub fn no_parity_(self) -> &'a mut W {
                 self.variant(PARITYSELW::NO_PARITY_)
-            }
-            #[doc = "Reserved."]
-            #[inline(always)]
-            pub fn reserved_(self) -> &'a mut W {
-                self.variant(PARITYSELW::RESERVED_)
             }
             #[doc = "Even parity. Adds a bit to each character such that the number of 1s in a transmitted character is even, and the number of 1s in a received character is expected to be even."]
             #[inline(always)]
@@ -51184,7 +51015,7 @@ pub mod usart0 {
             }
             #[doc = r" Writes raw bits to the field"]
             #[inline(always)]
-            pub fn bits(self, value: u8) -> &'a mut W {
+            pub unsafe fn bits(self, value: u8) -> &'a mut W {
                 const MASK: u8 = 3;
                 const OFFSET: u8 = 4;
                 self.w.bits &= !((MASK as u32) << OFFSET);
@@ -55792,8 +55623,6 @@ pub mod sct {
             THE_SCT_CLOCK_IS_THE,
             #[doc = "The input selected by  CKSEL clocks the SCT and prescalers. The input is synchronized to the bus clock and possibly inverted.  The minimum pulse width on the clock input is 1 bus clock  period. This mode is the low-power sampled-clock mode."]
             THE_INPUT_SELECTED_B,
-            #[doc = "Reserved."]
-            RESERVED_,
         }
         impl CLKMODER {
             #[doc = r" Value of the field as raw bits"]
@@ -55803,7 +55632,6 @@ pub mod sct {
                     CLKMODER::THE_BUS_CLOCK_CLOCKS => 0,
                     CLKMODER::THE_SCT_CLOCK_IS_THE => 1,
                     CLKMODER::THE_INPUT_SELECTED_B => 2,
-                    CLKMODER::RESERVED_ => 3,
                 }
             }
             #[allow(missing_docs)]
@@ -55814,7 +55642,6 @@ pub mod sct {
                     0 => CLKMODER::THE_BUS_CLOCK_CLOCKS,
                     1 => CLKMODER::THE_SCT_CLOCK_IS_THE,
                     2 => CLKMODER::THE_INPUT_SELECTED_B,
-                    3 => CLKMODER::RESERVED_,
                     _ => unreachable!(),
                 }
             }
@@ -55832,11 +55659,6 @@ pub mod sct {
             #[inline(always)]
             pub fn is_the_input_selected_b(&self) -> bool {
                 *self == CLKMODER::THE_INPUT_SELECTED_B
-            }
-            #[doc = "Checks if the value of the field is `RESERVED_`"]
-            #[inline(always)]
-            pub fn is_reserved_(&self) -> bool {
-                *self == CLKMODER::RESERVED_
             }
         }
         #[doc = "Possible values of the field `CLKSEL`"]
@@ -56095,8 +55917,6 @@ pub mod sct {
             THE_SCT_CLOCK_IS_THE,
             #[doc = "The input selected by  CKSEL clocks the SCT and prescalers. The input is synchronized to the bus clock and possibly inverted.  The minimum pulse width on the clock input is 1 bus clock  period. This mode is the low-power sampled-clock mode."]
             THE_INPUT_SELECTED_B,
-            #[doc = "Reserved."]
-            RESERVED_,
         }
         impl CLKMODEW {
             #[allow(missing_docs)]
@@ -56107,7 +55927,6 @@ pub mod sct {
                     CLKMODEW::THE_BUS_CLOCK_CLOCKS => 0,
                     CLKMODEW::THE_SCT_CLOCK_IS_THE => 1,
                     CLKMODEW::THE_INPUT_SELECTED_B => 2,
-                    CLKMODEW::RESERVED_ => 3,
                 }
             }
         }
@@ -56119,9 +55938,7 @@ pub mod sct {
             #[doc = r" Writes `variant` to the field"]
             #[inline(always)]
             pub fn variant(self, variant: CLKMODEW) -> &'a mut W {
-                {
-                    self.bits(variant._bits())
-                }
+                unsafe { self.bits(variant._bits()) }
             }
             #[doc = "The bus clock clocks the SCT and prescalers."]
             #[inline(always)]
@@ -56138,14 +55955,9 @@ pub mod sct {
             pub fn the_input_selected_b(self) -> &'a mut W {
                 self.variant(CLKMODEW::THE_INPUT_SELECTED_B)
             }
-            #[doc = "Reserved."]
-            #[inline(always)]
-            pub fn reserved_(self) -> &'a mut W {
-                self.variant(CLKMODEW::RESERVED_)
-            }
             #[doc = r" Writes raw bits to the field"]
             #[inline(always)]
-            pub fn bits(self, value: u8) -> &'a mut W {
+            pub unsafe fn bits(self, value: u8) -> &'a mut W {
                 const MASK: u8 = 3;
                 const OFFSET: u8 = 1;
                 self.w.bits &= !((MASK as u32) << OFFSET);
